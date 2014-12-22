@@ -1,0 +1,26 @@
+[
+	{
+		"name": "ferrari",
+		"text": "Ferrari"
+	},
+	{
+		"name": "ford",
+		"text": "Ford"
+	},
+	{
+		"name": "dodge",
+		"text": "Dodge"
+	},
+	{
+		"name": "mazda",
+		"text": "Mazda"
+	},
+	{
+		"name": "renault",
+		"text": "Renault"
+	},
+	{
+		"name": "nissan",
+		"text": "Nissan"
+	}
+]

@@ -1,0 +1,128 @@
+@import '_keyframe';
+@import '_animation';
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1000px;
+	height: 100%;
+	padding: 0;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-size: 14px;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	overflow: hidden;
+
+	#header {
+		position: relative;
+		background: #f3f3f3;
+		padding: 0 10px 0 10px;
+		z-index: 1;
+
+		.header-content {
+			position: relative;
+			max-width: 1280px;
+			height: 60px;
+			margin: 0 auto;
+
+			#logo {
+				width: 20%;
+				max-width: 200px;
+				height: 100%;
+				background: #2d97de;
+				color: white;
+				font-size: 36px;
+
+				a {
+					display: block;
+					padding: 10px 0 0 20px;
+
+					&:visited,
+					&:active {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	.container {
+		position: relative;
+		max-width: 1280px;
+		margin: auto;
+		padding: 10px 10px 0 10px;
+
+		#side-menu {
+			position: relative;
+			width: 20%;
+			max-width: 200px;
+			float: left;
+			z-index: 2;
+
+			ul {
+				padding: 0;
+				margin: 0;
+				border-bottom: 1px solid #dfdfdf;
+				overflow: hidden;
+
+				.menu-item {
+					padding: 10px;
+					border-top: 1px solid #dfdfdf;
+					background: #f8f8f8;
+					list-style: none;
+					cursor: pointer;
+
+					&.active {
+						@include animation(0s, 1s, menuItemSelect);
+					}
+
+					&:not(.active):hover {
+						@include animation(0s, 1s, menuItemHover);
+					}
+				}
+			}
+		}
+
+		#content {
+			padding-left: 214px;
+			opacity: 0;
+
+			&.loaded {
+				@include animation(0s, 1s, pageContentAppear);
+			}
+		}
+	}
+}
+
+@include keyframe(menuItemSelect) {
+	100% {
+		border-color: #ff644b;
+		background: #ff644b;
+		color: white;
+	}
+}
+
+@include keyframe(menuItemHover) {
+	100% {
+		background: white;
+		border-color: #dfdfdf;
+		color: black;
+	}
+}
+
+@include keyframe(pageContentAppear) {
+	100% {
+		opacity: 1;
+	}
+}
